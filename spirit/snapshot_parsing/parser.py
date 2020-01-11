@@ -15,14 +15,13 @@ def parse_snapshot(snapshot, snapshot_context):
     def function_parse_method(parse, item, context):
         return parse(context, item)
 
-    def comparator(item, _, candidate, encode_attr):
-        field = getattr(candidate, encode_attr)
+    def comparator(item, _, candidate, parse_attr):
+        field = getattr(candidate, parse_attr)
         return field.lower() in lower_list(vars(item))
 
     parsing_config = ParsingConfigurations.basic_configuration()
     parsing_config.parser_comparator = comparator
     parsing_config.enforce_one_parser = False
-
     return general_parse.parse_item(snapshot,
                                     snapshot_parsers,
                                     class_parse_method,

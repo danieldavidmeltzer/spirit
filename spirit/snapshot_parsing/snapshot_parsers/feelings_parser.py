@@ -1,5 +1,5 @@
 def parse_feelings(context, snapshot):
-    pass
+    print(snapshot.feelings.hunger)
 
 
 parse_feelings.field = "feelings"

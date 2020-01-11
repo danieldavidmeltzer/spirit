@@ -1,5 +1,5 @@
 def parse_pose(context, snapshot):
-    pass
+    print(snapshot.pose.rotation)
 
 
 parse_pose.field = "pose"

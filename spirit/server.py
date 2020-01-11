@@ -46,7 +46,6 @@ def convert_representation_field_to_protocol_field(field):
 @app.route("/upload_snapshot", methods=['POST'])
 def handle_snapshot():
     snapshot = request.get_data()
-    print(len(snapshot))
     protobuf_snapshot = Snapshot()
     protobuf_snapshot.ParseFromString(snapshot)
     # we can use parse_protobuf_item() only because the format and the

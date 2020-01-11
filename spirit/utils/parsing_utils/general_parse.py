@@ -14,6 +14,7 @@ def parse_using_parsers(item,
     """
     parse_attr_name = parsing_configurations.parse_attr_name
     parser_comparator = parsing_configurations.parser_comparator
+
     item_mark = parsing_configurations.item_mark
     all_parsers = [item
                    for item
@@ -44,25 +45,29 @@ def parse_item(item,
                ParsingConfigurations.basic_configuration(),
                **kwargs):
     """
-    parse an item if parser exist for it, otherwise return item
+    parse an item if parser exist for it,
+    if no parser found and one parser is enforced, we return the item itself
     returns multiple parsing results in array if single parser isn't enforced
     uses parsing_configurations
     """
-
     parsed_with_classes = \
         parse_using_parsers(item,
                             fetcher.get_all_classes(parsers_module),
                             cls_parse_method,
                             parsing_configurations,
                             **kwargs)
-    if parsed_with_classes is not None:  # we don't care for __bool__
-        return parsed_with_classes
+    if parsing_configurations.enforce_one_parser:
+        if parsed_with_classes is not None:  # we don't care for __bool__
+            return parsed_with_classes
     parsed_with_funcs = \
         parse_using_parsers(item,
                             fetcher.get_all_funcs(parsers_module),
                             func_parse_method,
                             parsing_configurations,
                             **kwargs)
-    if parsed_with_funcs is not None:  # we don't care for __bool__
-        return parsed_with_funcs
+    if parsing_configurations.enforce_one_parser:
+        if parsed_with_funcs is not None:  # we don't care for __bool__
+            return parsed_with_funcs
+    else:
+        return parsed_with_classes+parsed_with_funcs
     return item
