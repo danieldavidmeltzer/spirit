@@ -7,7 +7,8 @@ def get_all(module, evaluator):
     for item in sub_modules:
         concrete_item = item[1]
         items_contained = inspect.getmembers(concrete_item, evaluator)
-        formatted_items = [contained_item[1] for contained_item in items_contained]
+        formatted_items = [contained_item[1]
+                           for contained_item in items_contained]
         items.extend(formatted_items)
     return items
 

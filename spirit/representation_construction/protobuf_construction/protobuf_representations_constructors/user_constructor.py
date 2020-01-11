@@ -1,8 +1,9 @@
-from ...representations.representation_user import RepresentationUser
 import datetime
 
+from spirit.representations.representation_user import RepresentationUser
 
-def construct_user(protobuf_user, parse_protobuf):
+
+def construct_user(protobuf_user, _):
     gender = protobuf_user.gender
     user_id = protobuf_user.user_id
     username = protobuf_user.username

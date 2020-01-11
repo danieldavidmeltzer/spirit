@@ -1,3 +1,5 @@
+Pillow
+numpy==1.18.0
 alabaster==0.7.12
 attrs==19.2.0
 Babel==2.7.0
@@ -36,5 +38,4 @@ urllib3==1.25.7
 wcwidth==0.1.7
 Werkzeug==0.16.0
 protobuf==3.11.2
-jsonpickle==1.2
 matplotlib==3.1.2

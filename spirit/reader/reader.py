@@ -1,7 +1,8 @@
+import gzip
+
 from spirit.protobuf_reprsentations import Snapshot
 from spirit.protobuf_reprsentations import User
-from .utils import read_item
-import gzip
+from .protobuf_read import read_item
 
 
 class Reader:
@@ -15,11 +16,11 @@ class Reader:
         """
         self.file_name = file_name
         self.file_interactor = gzip.open(file_name, "rb")
-        user = self._read_user()
-        self.gender = user.gender
-        self.username = user.username
-        self.user_id = user.user_id
-        self.birthday = user.birth_date
+        self.user = self._read_user()
+        self.gender = self.user.gender
+        self.username = self.user.username
+        self.user_id = self.user.user_id
+        self.birthday = self.user.birth_date
 
     def _read_user(self):
         """

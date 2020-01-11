@@ -1,5 +1,7 @@
 import datetime as dt
-from ...representations.representation_snapshot import RepresentationSnapshot
+
+from spirit.representations.representation_snapshot import \
+    RepresentationSnapshot
 
 
 class SnapshotConstructor:
@@ -9,7 +11,8 @@ class SnapshotConstructor:
         self.protobuf_snapshot = protobuf_snapshot
 
     def construct(self, parse_protobuf_item):
-        date_time = dt.datetime.fromtimestamp(self.protobuf_snapshot.datetime / 1000.0)
+        date_time = dt.datetime.fromtimestamp(
+            self.protobuf_snapshot.datetime / 1000.0)
         pose = \
             parse_protobuf_item(self.protobuf_snapshot.pose)
         color_image =\

@@ -1,5 +1,3 @@
-import sys
-
 import click
 
 import spirit
@@ -47,8 +45,8 @@ def read(path):
 
 
 if __name__ == '__main__':
-    try:
-        main(prog_name="spirit")
-    except Exception as error:
-        print(f"Error: {error}")
-        sys.exit(1)
+    # try:
+    main(prog_name="spirit")
+    # except Exception as error:
+    #     print(f"Error: {error}")
+    #     sys.exit(1)
