@@ -38,9 +38,9 @@ def remove_unneeded_fields(snapshot, required_fields):
     reduces size of item to send. could be crucial if image is not needed
     """
     required_fields_lowered = lower_list(required_fields)
-    snapshot_var_keys = lower_list(snapshot.DESCRIPTOR.fields_by_name.keys())
+    snapshot_var_keys = snapshot.DESCRIPTOR.fields_by_name.keys()
     for var_key in snapshot_var_keys:
-        if var_key not in required_fields_lowered:
+        if var_key.lower() not in required_fields_lowered:
             snapshot.ClearField(var_key)
             logging.debug(f"cleared {var_key} from snapshot at date:"
                           f"{snapshot.datetime}")
