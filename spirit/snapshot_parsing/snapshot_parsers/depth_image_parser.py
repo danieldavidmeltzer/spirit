@@ -1,6 +1,7 @@
-import matplotlib.pyplot as plotter
-import string
 import random
+import string
+
+import matplotlib.pyplot as plotter
 
 
 def parse_depth_image(context, snapshot):
