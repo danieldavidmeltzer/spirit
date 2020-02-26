@@ -69,5 +69,5 @@ def parse_item(item,
         if parsed_with_funcs is not None:  # we don't care for __bool__
             return parsed_with_funcs
     else:
-        return parsed_with_classes+parsed_with_funcs
+        return parsed_with_classes + parsed_with_funcs
     return item

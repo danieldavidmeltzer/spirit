@@ -4,4 +4,3 @@ class RepresentationUser:
         self.user_id = user_id
         self.username = username
         self.birth_date = birth_date
-

@@ -1,5 +1,3 @@
-
-
 def run_server(port, data_dir):
     """
     @address: address to run server in format (ip,port)

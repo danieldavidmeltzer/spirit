@@ -15,7 +15,7 @@ class SnapshotConstructor:
             self.protobuf_snapshot.datetime / 1000.0)
         pose = \
             parse_protobuf_item(self.protobuf_snapshot.pose)
-        color_image =\
+        color_image = \
             parse_protobuf_item(self.protobuf_snapshot.color_image)
         depth_image = \
             parse_protobuf_item(self.protobuf_snapshot.depth_image)
@@ -25,5 +25,3 @@ class SnapshotConstructor:
                                       color_image,
                                       depth_image,
                                       feelings)
-
-
