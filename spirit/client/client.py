@@ -4,8 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 
 from spirit.representations_encoding import encoder
-from .reader import reader
-from .utils.list_utils import lower_list
+from spirit.reader import reader
+from spirit.utils.list_utils import lower_list
 
 
 class Client:

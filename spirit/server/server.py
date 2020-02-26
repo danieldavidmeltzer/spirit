@@ -6,9 +6,9 @@ from spirit.protobuf_reprsentations import Snapshot
 from spirit.representation_construction.protobuf_construction.protobuf_parse \
     import parse_protobuf_item
 from spirit.snapshot_parser_utils.parser import parse_snapshot
-from . import parsers
-from .utils import fetcher
-from .utils.context import Context
+from spirit import parsers
+from spirit.utils import fetcher
+from spirit.utils.context import Context
 
 app = Flask(__name__)
 
@@ -69,15 +69,15 @@ def get_all_parsers():
 
 
 def get_all_class_parsers():
-    available_parsers = [cls
-                         for cls in
+    available_parsers = [cls_parser
+                         for cls_parser in
                          fetcher.get_all_classes(parsers)
-                         if "parse" in cls.__name__.lower()]
+                         if "parse" in cls_parser.__name__.lower()]
     return available_parsers
 
 
 def get_all_func_parsers():
-    available_parsers = [f
-                         for f in fetcher.get_all_funcs(parsers)
-                         if "parse" in f.__name__.lower()]
+    available_parsers = [parser
+                         for parser in fetcher.get_all_funcs(parsers)
+                         if "parse" in parser.__name__.lower()]
     return available_parsers

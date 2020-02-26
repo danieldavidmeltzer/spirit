@@ -1,4 +1,4 @@
-from .Exceptions import Ambiguous
+from .exceptions import Ambiguous
 
 
 def get_single_item(a_list):
