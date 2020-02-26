@@ -5,8 +5,8 @@ from flask import request
 from spirit.protobuf_reprsentations import Snapshot
 from spirit.representation_construction.protobuf_construction.protobuf_parse \
     import parse_protobuf_item
-from spirit.snapshot_parsing.parser import parse_snapshot
-from .snapshot_parsing import snapshot_parsers
+from spirit.snapshot_parser_utils.parser import parse_snapshot
+from . import parsers
 from .utils import fetcher
 from .utils.context import Context
 
@@ -26,6 +26,10 @@ class Server:
 
 @app.route("/get_parsers")
 def available_parsers_names():
+    """
+    get list of all available parsers
+    """
+
     def protocol_field_for_parser(parser):
         return \
             convert_representation_field_to_protocol_field(parser.field)
@@ -67,13 +71,13 @@ def get_all_parsers():
 def get_all_class_parsers():
     available_parsers = [cls
                          for cls in
-                         fetcher.get_all_classes(snapshot_parsers)
+                         fetcher.get_all_classes(parsers)
                          if "parse" in cls.__name__.lower()]
     return available_parsers
 
 
 def get_all_func_parsers():
     available_parsers = [f
-                         for f in fetcher.get_all_funcs(snapshot_parsers)
+                         for f in fetcher.get_all_funcs(parsers)
                          if "parse" in f.__name__.lower()]
     return available_parsers

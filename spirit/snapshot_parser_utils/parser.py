@@ -1,7 +1,8 @@
+from spirit import parsers
 from spirit.utils.list_utils import lower_list
-from . import snapshot_parsers
-from ..utils.parsing_utils import general_parse
-from ..utils.parsing_utils.parsing_configurations import ParsingConfigurations
+from spirit.utils.parsing_utils import general_parse
+from spirit.utils.parsing_utils.parsing_configurations import \
+    ParsingConfigurations
 
 
 def parse_snapshot(snapshot, snapshot_context):
@@ -23,7 +24,7 @@ def parse_snapshot(snapshot, snapshot_context):
     parsing_config.parser_comparator = comparator
     parsing_config.enforce_one_parser = False
     return general_parse.parse_item(snapshot,
-                                    snapshot_parsers,
+                                    parsers,
                                     class_parse_method,
                                     function_parse_method,
                                     parsing_config,
