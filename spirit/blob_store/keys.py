@@ -1,0 +1,6 @@
+MINIO_ACCESS_KEY = "minio_access_key"
+MINIO_SECRET_KEY = "minio_secret_key"
+ENV_MINIO_ACCESS_KEY = "MINIO_ACCESS_KEY"
+ENV_MINIO_SECRET_KEY = "MINIO_SECRET_KEY"
+BUCKET_NAME_KEY = "main-blob-bucket"
+HTTP_HEADER_SIZE_KEY = "Content-Length"

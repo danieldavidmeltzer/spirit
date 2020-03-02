@@ -1,7 +1,7 @@
 import gzip
 
-from spirit.protobuf_reprsentations import Snapshot
-from spirit.protobuf_reprsentations import User
+from spirit.sample_protobuf import Snapshot
+from spirit.sample_protobuf import User
 from .protobuf_read import read_item
 
 

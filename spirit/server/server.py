@@ -1,83 +1,36 @@
 from flask import Flask
-from flask import jsonify
 from flask import request
 
-from spirit.protobuf_reprsentations import Snapshot
-from spirit.representation_construction.protobuf_construction.protobuf_parse \
-    import parse_protobuf_item
-from spirit.snapshot_parser_utils.parser import parse_snapshot
-from spirit import parsers
-from spirit.utils import fetcher
+from spirit.communication_protobuf.connection_protocol_pb2 import\
+    SnapshotPacketCommunicated
+from spirit.representation_construction.protobuf_construction.protobuf_parsers\
+    .communication_protobuf_parser import parse_communication_protobuf
+from spirit.representations_encoding.helper_encoders import inner_encoder
 from spirit.utils.context import Context
 
 app = Flask(__name__)
 
 
 class Server:
-    def __init__(self, host, port, data_dir):
+    def __init__(self, host, port, publish):
         self.host = host
         self.port = port
-        self.data_dir = data_dir
+        self.publish = publish
 
     def run_server(self):
-        app.config["data_dir"] = self.data_dir
+        app.config["publish"] = self.publish
         app.run(host=self.host, port=self.port)
-
-
-@app.route("/get_parsers")
-def available_parsers_names():
-    """
-    get list of all available parsers
-    """
-
-    def protocol_field_for_parser(parser):
-        return \
-            convert_representation_field_to_protocol_field(parser.field)
-
-    return jsonify([protocol_field_for_parser(parser)
-                    for parser in get_all_parsers()])
-
-
-def convert_representation_field_to_protocol_field(field):
-    """
-    this function should take snapshot representation field name
-    and convert it to the matching name in protocol
-    """
-    mapping = {"date_time": "datetime"}
-    return mapping.get(field, field)  # name from map, default is name itself
 
 
 @app.route("/upload_snapshot", methods=['POST'])
 def handle_snapshot():
     snapshot = request.get_data()
-    protobuf_snapshot = Snapshot()
-    protobuf_snapshot.ParseFromString(snapshot)
-    # we can use parse_protobuf_item() only because the format and the
-    # representation in both the client and the server are the same
-    # but if the client was written in other language or in other formats
-    # and wouldn't use this format we would have had to use our own
-    # code, i don't  want to have code multiplication within the project so
-    # it's ok, carefully use this code until it diverges
-    snapshot_represented = parse_protobuf_item(protobuf_snapshot)
-    context = Context.build_context(app.config["data_dir"])
-    parse_snapshot(snapshot_represented, context)
+    protobuf_snapshot_packet = SnapshotPacketCommunicated()
+    protobuf_snapshot_packet.ParseFromString(snapshot)
+    snapshot_packet_represented = \
+        parse_communication_protobuf(protobuf_snapshot_packet)
+    encoded_packet = inner_encoder.encode_item(snapshot_packet_represented)
+    serialized_encoded_packet = encoded_packet.SerializeToString()
+    context = Context.build_context(app.config["publish"])
+    context.publish(serialized_encoded_packet)
     return "handled"
-
-
-def get_all_parsers():
-    return get_all_class_parsers() + get_all_func_parsers()
-
-
-def get_all_class_parsers():
-    available_parsers = [cls_parser
-                         for cls_parser in
-                         fetcher.get_all_classes(parsers)
-                         if "parse" in cls_parser.__name__.lower()]
-    return available_parsers
-
-
-def get_all_func_parsers():
-    available_parsers = [parser
-                         for parser in fetcher.get_all_funcs(parsers)
-                         if "parse" in parser.__name__.lower()]
-    return available_parsers
