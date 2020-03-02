@@ -4,11 +4,11 @@ from spirit.representations_server.representation_image import \
 from numpy import array
 
 
-def construct_depth_image(protobuf_depth_image, _, blob_url):
+def construct_depth_image(protobuf_depth_image, _, blob_url, keys):
     width = protobuf_depth_image.width
-    height = protobuf_depth_image.depth_image.height
-    binary_data = array(protobuf_depth_image.depth_image.data).tobytes()
-    blob_id = BlobStore(blob_url).save_binary(binary_data)
+    height = protobuf_depth_image.height
+    binary_data = array(protobuf_depth_image.data).tobytes()
+    blob_id = BlobStore(blob_url, keys=keys).save_binary(binary_data)
     depth_image = RepresentationImage(width, height, blob_id)
     return depth_image
 

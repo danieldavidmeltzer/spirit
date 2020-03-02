@@ -9,12 +9,12 @@ def main():
     pass
 
 
-def run_server(host, port, publish):
+def run_server(host, port, blob_store, publish):
     """
     run the server at <host>:<port>
     with method publish to publish the snapshots
     """
-    Server(host, port, publish).run_server()
+    Server(host, port, blob_store,publish).run_server()
 
 
 @main.command(name='run-server')
@@ -41,9 +41,9 @@ def run_server_cli(message_queue, blob_store, host, port):
                   f"using MQ:{message_queue}")
 
     def publish_to_message_queue(message):
-        print(message.snapshot.date_time)
+        print(message)
 
-    run_server(host, port, publish_to_message_queue)
+    run_server(host, port, blob_store, publish_to_message_queue)
 
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@ class BlobStore:
         Returns:
             unique id for fetching the binary later
         """
-        self.driver.save_binary(binary)
+        return self.driver.save_binary(binary)
 
     def get_binary(self, binary_id):
         """

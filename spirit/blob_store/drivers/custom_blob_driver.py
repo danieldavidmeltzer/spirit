@@ -14,7 +14,7 @@ class CustomBlobDriver:
         self.minio_client = Minio(minio_url,
                                   access_key=minio_access_key,
                                   secret_key=minio_secret_key,
-                                  secure=True)
+                                  secure=False)
 
     def save_binary(self, binary):
         """

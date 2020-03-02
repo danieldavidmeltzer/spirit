@@ -3,6 +3,8 @@ from spirit.inner_protobuf.inner_protocol_pb2 import \
 
 
 class SnapshotPacketEncoder:
+    field = "RepresentationSnapshotPacket"
+
     def __init__(self, snapshot_packet):
         self.snapshot_packet = snapshot_packet
 
@@ -15,4 +17,4 @@ class SnapshotPacketEncoder:
         return encoded_snapshot_packet
 
 
-SnapshotPacketEncoder.field = "RepresentationSnapshotPacket"
+
