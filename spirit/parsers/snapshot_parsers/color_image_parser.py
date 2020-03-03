@@ -4,7 +4,7 @@ import string
 from PIL import Image
 
 
-def parse_color_image(context, snapshot):
+def parse_color_image(snapshot, context):
     image_name = ''.join(random.choices(string.ascii_uppercase, k=32))
     path = context.path(image_name)
     Image.fromarray(snapshot.color_image).save(path + ".jpg")

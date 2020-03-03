@@ -9,6 +9,7 @@ class SnapshotEncoder:
         milliseconds_from_epoch = \
             int(datetime.timestamp(self.snapshot.date_time) * 1000)
         encoded_snapshot.datetime = milliseconds_from_epoch
+        encoded_snapshot.snapshot_id = self.snapshot.snapshot_id
         encoder(self.snapshot.pose,
                 snapshot=encoded_snapshot)
         encoder(self.snapshot.color_image,

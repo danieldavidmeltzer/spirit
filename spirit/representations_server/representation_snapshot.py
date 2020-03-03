@@ -1,5 +1,7 @@
+
+
 class RepresentationSnapshot:
-    def __init__(self, date_time, pose, color_image, depth_image, feelings):
+    def __init__(self, date_time, pose, color_image, depth_image, feelings, snapshot_id):
         """
         date_time is datetime.datetime
         pose is Representation Pose
@@ -14,3 +16,4 @@ class RepresentationSnapshot:
         self.color_image = color_image
         self.depth_image = depth_image
         self.feelings = feelings
+        self.snapshot_id = snapshot_id

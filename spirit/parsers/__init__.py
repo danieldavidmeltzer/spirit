@@ -1,3 +1,2 @@
-from spirit.utils.importer import import_all_submodules
+from .parser_helpers import run_parser
 
-__all__ = import_all_submodules(__name__)

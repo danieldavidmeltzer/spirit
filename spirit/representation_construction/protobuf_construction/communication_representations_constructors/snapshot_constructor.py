@@ -1,5 +1,5 @@
 import datetime as dt
-
+from uuid import uuid4
 from spirit.representations_server.representation_snapshot import \
     RepresentationSnapshot
 
@@ -26,4 +26,5 @@ class SnapshotConstructor:
                                       pose,
                                       color_image,
                                       depth_image,
-                                      feelings)
+                                      feelings,
+                                      uuid4())

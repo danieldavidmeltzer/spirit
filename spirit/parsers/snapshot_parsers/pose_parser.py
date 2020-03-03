@@ -1,4 +1,4 @@
-def parse_pose(context, snapshot):
+def parse_pose(snapshot, _):
     print(snapshot.pose.rotation)
 
 

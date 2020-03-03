@@ -21,4 +21,5 @@ class SnapshotConstructor:
                                       pose,
                                       color_image,
                                       depth_image,
-                                      feelings)
+                                      feelings,
+                                      self.protobuf_snapshot.snapshot_id)

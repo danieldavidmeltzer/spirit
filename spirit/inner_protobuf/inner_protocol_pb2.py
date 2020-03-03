@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x14inner-protocol.proto\"Q\n\x13SnapshotPacketInner\x12 \n\x08snapshot\x18\x01 \x01(\x0b\x32\x0e.SnapshotInner\x12\x18\n\x04user\x18\x02 \x01(\x0b\x32\n.UserInner\"\x98\x01\n\tUserInner\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08\x62irthday\x18\x03 \x01(\r\x12&\n\x06gender\x18\x04 \x01(\x0e\x32\x16.UserInner.GenderInner\".\n\x0bGenderInner\x12\x08\n\x04MALE\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\t\n\x05OTHER\x10\x02\"\xa1\x01\n\rSnapshotInner\x12\x10\n\x08\x64\x61tetime\x18\x01 \x01(\x04\x12\x18\n\x04pose\x18\x02 \x01(\x0b\x32\n.PoseInner\x12 \n\x0b\x63olor_image\x18\x03 \x01(\x0b\x32\x0b.ImageInner\x12 \n\x0b\x64\x65pth_image\x18\x04 \x01(\x0b\x32\x0b.ImageInner\x12 \n\x08\x66\x65\x65lings\x18\x05 \x01(\x0b\x32\x0e.FeelingsInner\"\xdb\x01\n\tPoseInner\x12\x30\n\x0btranslation\x18\x01 \x01(\x0b\x32\x1b.PoseInner.TranslationInner\x12*\n\x08rotation\x18\x02 \x01(\x0b\x32\x18.PoseInner.RotationInner\x1a\x33\n\x10TranslationInner\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x1a;\n\rRotationInner\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\"<\n\nImageInner\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\x0f\n\x07\x62lob_id\x18\x03 \x01(\t\"V\n\rFeelingsInner\x12\x0e\n\x06hunger\x18\x01 \x01(\x02\x12\x0e\n\x06thirst\x18\x02 \x01(\x02\x12\x12\n\nexhaustion\x18\x03 \x01(\x02\x12\x11\n\thappiness\x18\x04 \x01(\x02\x62\x06proto3'
+  serialized_pb=b'\n\x14inner-protocol.proto\"Q\n\x13SnapshotPacketInner\x12 \n\x08snapshot\x18\x01 \x01(\x0b\x32\x0e.SnapshotInner\x12\x18\n\x04user\x18\x02 \x01(\x0b\x32\n.UserInner\"\x98\x01\n\tUserInner\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08\x62irthday\x18\x03 \x01(\r\x12&\n\x06gender\x18\x04 \x01(\x0e\x32\x16.UserInner.GenderInner\".\n\x0bGenderInner\x12\x08\n\x04MALE\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\t\n\x05OTHER\x10\x02\"\xb6\x01\n\rSnapshotInner\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\x02 \x01(\x04\x12\x18\n\x04pose\x18\x03 \x01(\x0b\x32\n.PoseInner\x12 \n\x0b\x63olor_image\x18\x04 \x01(\x0b\x32\x0b.ImageInner\x12 \n\x0b\x64\x65pth_image\x18\x05 \x01(\x0b\x32\x0b.ImageInner\x12 \n\x08\x66\x65\x65lings\x18\x06 \x01(\x0b\x32\x0e.FeelingsInner\"\xdb\x01\n\tPoseInner\x12\x30\n\x0btranslation\x18\x01 \x01(\x0b\x32\x1b.PoseInner.TranslationInner\x12*\n\x08rotation\x18\x02 \x01(\x0b\x32\x18.PoseInner.RotationInner\x1a\x33\n\x10TranslationInner\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x1a;\n\rRotationInner\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\"<\n\nImageInner\x12\r\n\x05width\x18\x01 \x01(\r\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\x0f\n\x07\x62lob_id\x18\x03 \x01(\t\"V\n\rFeelingsInner\x12\x0e\n\x06hunger\x18\x01 \x01(\x02\x12\x0e\n\x06thirst\x18\x02 \x01(\x02\x12\x12\n\nexhaustion\x18\x03 \x01(\x02\x12\x11\n\thappiness\x18\x04 \x01(\x02\x62\x06proto3'
 )
 
 
@@ -149,36 +149,43 @@ _SNAPSHOTINNER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='datetime', full_name='SnapshotInner.datetime', index=0,
-      number=1, type=4, cpp_type=4, label=1,
+      name='snapshot_id', full_name='SnapshotInner.snapshot_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='datetime', full_name='SnapshotInner.datetime', index=1,
+      number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pose', full_name='SnapshotInner.pose', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='color_image', full_name='SnapshotInner.color_image', index=2,
+      name='pose', full_name='SnapshotInner.pose', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='depth_image', full_name='SnapshotInner.depth_image', index=3,
+      name='color_image', full_name='SnapshotInner.color_image', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='feelings', full_name='SnapshotInner.feelings', index=4,
+      name='depth_image', full_name='SnapshotInner.depth_image', index=4,
       number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='feelings', full_name='SnapshotInner.feelings', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -196,7 +203,7 @@ _SNAPSHOTINNER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=263,
-  serialized_end=424,
+  serialized_end=445,
 )
 
 
@@ -240,8 +247,8 @@ _POSEINNER_TRANSLATIONINNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=534,
-  serialized_end=585,
+  serialized_start=555,
+  serialized_end=606,
 )
 
 _POSEINNER_ROTATIONINNER = _descriptor.Descriptor(
@@ -291,8 +298,8 @@ _POSEINNER_ROTATIONINNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=587,
-  serialized_end=646,
+  serialized_start=608,
+  serialized_end=667,
 )
 
 _POSEINNER = _descriptor.Descriptor(
@@ -328,8 +335,8 @@ _POSEINNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=646,
+  serialized_start=448,
+  serialized_end=667,
 )
 
 
@@ -373,8 +380,8 @@ _IMAGEINNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=648,
-  serialized_end=708,
+  serialized_start=669,
+  serialized_end=729,
 )
 
 
@@ -425,8 +432,8 @@ _FEELINGSINNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=710,
-  serialized_end=796,
+  serialized_start=731,
+  serialized_end=817,
 )
 
 _SNAPSHOTPACKETINNER.fields_by_name['snapshot'].message_type = _SNAPSHOTINNER

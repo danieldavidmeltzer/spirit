@@ -1,4 +1,4 @@
-def parse_feelings(context, snapshot):
+def parse_feelings(snapshot, _):
     print(snapshot.feelings.hunger)
 
 

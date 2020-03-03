@@ -18,11 +18,12 @@ message UserInner {
 }
 
 message SnapshotInner {
-    uint64 datetime = 1;
-    PoseInner pose = 2;
-    ImageInner color_image = 3;
-    ImageInner depth_image = 4;
-    FeelingsInner feelings = 5;
+    string snapshot_id = 1;
+    uint64 datetime = 2;
+    PoseInner pose = 3;
+    ImageInner color_image = 4;
+    ImageInner depth_image = 5;
+    FeelingsInner feelings = 6;
 }
 
 message PoseInner {

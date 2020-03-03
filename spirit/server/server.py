@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 
 class Server:
-    def __init__(self, host, port,blob_store, publish):
+    def __init__(self, host, port, blob_store, publish):
         self.host = host
         self.port = port
         self.publish = publish

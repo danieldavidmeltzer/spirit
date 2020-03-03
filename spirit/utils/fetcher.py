@@ -5,6 +5,7 @@ def get_all(module, evaluator):
     sub_modules = inspect.getmembers(module, inspect.ismodule)
     items = []
     for item in sub_modules:
+        # TODO: explain ones
         concrete_item = item[1]
         items_contained = inspect.getmembers(concrete_item, evaluator)
         formatted_items = [contained_item[1]
