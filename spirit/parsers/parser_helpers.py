@@ -6,6 +6,7 @@ from spirit.inner_protobuf.inner_protocol_pb2 import \
 from spirit.representation_construction.protobuf_construction.protobuf_parsers \
     import inner_protobuf_parser
 from .parsing_context import ParsingContext
+from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 
 
 def run_parser(parser_field, snapshot, blob_url=None):
@@ -13,7 +14,12 @@ def run_parser(parser_field, snapshot, blob_url=None):
     protobuf_snapshot_packet.ParseFromString(snapshot)
     snapshot_represented = \
         inner_protobuf_parser.parse_inner_protobuf(protobuf_snapshot_packet)
-    parsing_context = ParsingContext.build_context(blob_url)
+    keys = None
+    if blob_url:
+        keys = get_minio_keys_from_environment()
+
+    parsing_context = ParsingContext.\
+        build_context(blob_url, keys)
     return parser.parse_snapshot(snapshot_represented,
                                  parser_field,
                                  parsing_context)

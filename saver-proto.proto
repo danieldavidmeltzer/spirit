@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+message ParsingResult {
+    SnapshotSaver snapshot = 1;
+    UserSaver user = 2;
+    Result result = 3;
+}
+
+message Result{
+    message Field{
+        message FieldValue{
+        // value would be one of int, double, string, sub_fields
+            string value_type = 1;
+            int32 int_value = 2;
+            string string_value = 3;
+            double double_value = 4;
+            repeated Field sub_fields_value = 5;
+        }
+        string fieldName = 1;
+        FieldValue fieldValue = 2;
+    }
+    string parser_name = 1;
+    repeated Field parser_fields = 2;
+}
+
+message UserSaver {
+    enum GenderSaver {
+        MALE = 0;
+        FEMALE = 1;
+        OTHER = 2;
+    }
+    uint64 user_id = 1;
+    string username = 2;
+    uint32 birthday = 3;
+    GenderSaver gender = 4;
+}
+
+message SnapshotSaver {
+    string snapshot_id = 1;
+    uint64 datetime = 2;
+}
