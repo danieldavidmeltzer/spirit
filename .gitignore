@@ -1,0 +1,14 @@
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sphinx documentation
+/docs/build/
+
+# Environments
+.env
+
+
+.idea
+

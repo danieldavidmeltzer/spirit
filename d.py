@@ -1,0 +1,1 @@
+db.dr.update({'x':132},{'$push':{'results':'name'},'$set':{'2':datetime.datetime.now()}}, True)

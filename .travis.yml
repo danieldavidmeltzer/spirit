@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.8"
+install:
+  - ./scripts/install.sh
+  - source .env/bin/activate
+script:
+  - pytest --cov-report term --cov=spirit
+after_success:
+  - codecov
+
