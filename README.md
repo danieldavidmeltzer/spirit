@@ -10,7 +10,7 @@
 
 ## Installation
 
-1. Clone the repository and enter it:
+- Clone the repository and enter it:
 
     ```shell script
     $ git clone git@github.com:danieldavidmeltzer/spirit.git
@@ -18,7 +18,6 @@
     $ cd spirit/
     ```
 
-### optional steps(you can skip to running)
 
 - Run the installation script and activate the virtual environment:
 
@@ -35,7 +34,7 @@
     ```
 
 ## Running
-
+### Warning: tested on Mac only, using linux might have change.
 ```shell script
 ./run_pipline.sh
 ```
@@ -71,6 +70,10 @@ select a user, you could see users snapshots than and well.. view them.
 ## Documentation
  See [full documentation](https://readthedocs.org/projects/spirit-daniel/).
  it's not much, but it's something.
+ 
+## Running modules
+
+when running modules please use help. 
  
 ## Parsing (generally, not snapshots) utility
 
@@ -127,6 +130,6 @@ the users for too long can download all he's images unrequited.
 testing components that require docker containers to be tested.
 - bad web site/design, again time limitations.
 - running on flask development server, for now.
-
+- Using default 404,500 error pages in website.
 
 # Enjoy :)
