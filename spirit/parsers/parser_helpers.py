@@ -1,14 +1,16 @@
+import logging
+
 import pika
 from purl import URL
-import logging
-from . import parser
+
+from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from spirit.inner_protobuf.inner_protocol_pb2 import \
     SnapshotPacketInner
 from spirit.representation_construction.protobuf_construction.protobuf_parsers \
     import inner_protobuf_parser
-from .parsing_context import ParsingContext
-from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from spirit.representations_encoding.helper_encoders import saver_encoder
+from . import parser
+from .parsing_context import ParsingContext
 
 
 def get_snapshot_packet_represented(snapshot_packet):

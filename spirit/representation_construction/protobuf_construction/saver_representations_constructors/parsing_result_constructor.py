@@ -1,4 +1,4 @@
-from spirit.representations_saver.representation_parsing_result\
+from spirit.representations_saver.representation_parsing_result \
     import RepresentationParsingResult
 
 

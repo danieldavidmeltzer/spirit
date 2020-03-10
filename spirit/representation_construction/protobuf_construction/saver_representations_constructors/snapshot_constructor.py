@@ -1,4 +1,5 @@
 import datetime as dt
+
 from spirit.representations_saver.representation_snapshot \
     import RepresentationSnapshot
 

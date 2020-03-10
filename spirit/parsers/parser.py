@@ -1,9 +1,9 @@
-from . import snapshot_parsers
 from spirit.utils.list_utils import lower_list
 from spirit.utils.parsing_utils import general_parse
 from spirit.utils.parsing_utils.parsing_configurations import \
     ParsingConfigurations
 from spirit.utils.string_utils import non_key_sensitive_match
+from . import snapshot_parsers
 
 
 def parse_snapshot(snapshot, parser_field, cntxt):

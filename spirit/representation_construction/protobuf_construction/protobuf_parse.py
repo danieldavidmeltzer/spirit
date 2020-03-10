@@ -29,5 +29,3 @@ def parse_protobuf_item(protobuf_item, constructors, **kwargs):
                                     class_construct_method,
                                     function_parse_method,
                                     **kwargs)
-
-

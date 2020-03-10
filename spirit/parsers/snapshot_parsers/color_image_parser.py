@@ -1,6 +1,8 @@
 import io
-from numpy import array
+
 from PIL import Image
+from numpy import array
+
 from spirit.blob_store.blob_store import BlobStore
 
 

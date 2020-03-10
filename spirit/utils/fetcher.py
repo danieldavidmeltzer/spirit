@@ -1,5 +1,7 @@
 import inspect
+
 from purl import URL
+
 from .list_utils import get_single_item
 
 

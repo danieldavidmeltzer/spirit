@@ -1,7 +1,8 @@
+from numpy import array
+
 from spirit.blob_store.blob_store import BlobStore
 from spirit.representations_server.representation_image import \
     RepresentationImage
-from numpy import array
 
 
 def construct_depth_image(protobuf_depth_image, _, blob_url, keys):

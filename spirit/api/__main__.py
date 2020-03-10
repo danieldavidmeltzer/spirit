@@ -1,7 +1,9 @@
-import click
-import sys
-from .api_server import APIServer
 import logging
+import sys
+
+import click
+
+from .api_server import APIServer
 
 
 @click.group()

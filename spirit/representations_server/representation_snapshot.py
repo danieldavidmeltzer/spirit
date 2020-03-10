@@ -1,5 +1,3 @@
-
-
 class RepresentationSnapshot:
     def __init__(self, date_time, pose, color_image, depth_image, feelings,
                  snapshot_id):

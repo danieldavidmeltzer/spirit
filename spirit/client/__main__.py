@@ -1,8 +1,10 @@
-import sys
-import click
 import logging
-from .client import Client
+import sys
+
+import click
 import requests
+
+from .client import Client
 
 
 @click.group()

@@ -1,15 +1,17 @@
+import logging
+
 from flask import Flask
 from flask import request
-import logging
+
+from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from spirit.communication_protobuf.connection_protocol_pb2 import \
     SnapshotPacketCommunicated
 from spirit.representation_construction.protobuf_construction.protobuf_parsers \
     .communication_protobuf_parser import parse_communication_protobuf
 from spirit.representations_encoding.helper_encoders import inner_encoder
 from spirit.utils.context import Context
-from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 
-#from gevent.pywsgi import WSGIServer
+# from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 

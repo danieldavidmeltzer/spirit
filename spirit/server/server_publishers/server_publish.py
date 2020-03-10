@@ -1,7 +1,8 @@
+from purl import URL
+
 from spirit.utils.fetcher import get_all_funcs
 from spirit.utils.list_utils import get_single_item
 from . import drivers
-from purl import URL
 
 
 def find_publisher_driver(url):
@@ -18,5 +19,3 @@ def find_publisher_driver(url):
     optional_publishers = list(filter(publisher_filter, optional_publishers))
     create_publisher = get_single_item(optional_publishers)
     return create_publisher(url)
-
-

@@ -1,8 +1,10 @@
+import logging
+import sys
+
 import click
 import pika
-import sys
-import logging
 from purl import URL
+
 from .saver import Saver
 
 
@@ -54,7 +56,7 @@ def save(result_path, database):
     to
     <database>
     """
-    with open(result_path,'rb') as reader:
+    with open(result_path, 'rb') as reader:
         saver = Saver(database)
         saver.save(reader.read())
 

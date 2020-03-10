@@ -1,7 +1,9 @@
-import click
-import sys
-from .gui_server import GUIServer
 import logging
+import sys
+
+import click
+
+from .gui_server import GUIServer
 
 
 @click.group()

@@ -1,4 +1,4 @@
-from spirit.representations_server.representation_image import\
+from spirit.representations_server.representation_image import \
     RepresentationImage
 
 

@@ -1,5 +1,6 @@
 import datetime as dt
 from uuid import uuid4
+
 from spirit.representations_server.representation_snapshot import \
     RepresentationSnapshot
 

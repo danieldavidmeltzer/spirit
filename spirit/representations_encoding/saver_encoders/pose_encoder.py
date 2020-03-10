@@ -1,6 +1,3 @@
-from spirit.saver_protobuf.saver_proto_pb2 import Field
-
-
 def encode_pose(pose_result, encoder, result):
     pose = pose_result[1]
     parser_name = pose_result[0]  # this should be 'pose'

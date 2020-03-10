@@ -1,4 +1,5 @@
 import string
+
 from PIL import Image
 
 
@@ -16,7 +17,7 @@ def print_ascii_art(binary_image):
     # a-zA-Z
     chars = string.ascii_lowercase
     jumps = len(chars) / 255
-    ascii_art = [chars[max(min(int(grey_value * jumps), len(chars)-1), 0)]
+    ascii_art = [chars[max(min(int(grey_value * jumps), len(chars) - 1), 0)]
                  for grey_value in pixels]
     lines_number = int(len(ascii_art) / width)
     ascii_lines = []

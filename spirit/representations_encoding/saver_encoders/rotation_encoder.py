@@ -11,6 +11,7 @@ def encode_rotation(rotation, _):
         rotation_field.field_value.sub_fields_value.append(sub_field)
     return rotation_field
 
+
 def create_sub_fields(field_name, field_value):
     sub_field = Field()
     sub_field.field_name = field_name

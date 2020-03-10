@@ -1,4 +1,5 @@
 from purl import URL
+
 from spirit.utils import fetcher
 from spirit.utils.list_utils import get_single_item
 from . import drivers
@@ -9,6 +10,7 @@ class BlobStore:
     class that helps mange saving and reading binaries through
     different services using different drivers
     """
+
     def __init__(self, url, keys=None):
         """
         initialise a blob store using a url, correct blob store and it's

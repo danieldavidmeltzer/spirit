@@ -1,6 +1,6 @@
+import requests
 from flask import Flask
 from flask import render_template
-import requests
 
 app = Flask(__name__, template_folder="../../website/",
             static_folder="../../website/")

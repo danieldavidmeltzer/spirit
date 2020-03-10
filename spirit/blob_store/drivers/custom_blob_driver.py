@@ -1,8 +1,10 @@
 import io
-from purl import URL
-from ..keys import *
-from minio import Minio
 from uuid import uuid4
+
+from minio import Minio
+from purl import URL
+
+from ..keys import *
 
 
 class CustomBlobDriver:

@@ -22,5 +22,7 @@ def retry_on_exception(exception_type, max_tries):
                                       f"try number {i + 1} out of {max_tries}")
                     continue
                 break  # if succeed to finish
+
         return wrapper
+
     return retry

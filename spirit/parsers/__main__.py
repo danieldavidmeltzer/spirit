@@ -1,9 +1,10 @@
-import sys
-import click
 import logging
-from purl import URL
-from .parser_helpers import run_parser
+import sys
+
+import click
+
 from .parser_helpers import run_mq_parser
+from .parser_helpers import run_parser
 
 
 @click.group()

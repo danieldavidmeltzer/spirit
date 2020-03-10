@@ -9,4 +9,3 @@ def save_composite_result(composite_result, saver, mongo_db):
 
 
 save_composite_result.field = "RepresentationFieldComposite"
-

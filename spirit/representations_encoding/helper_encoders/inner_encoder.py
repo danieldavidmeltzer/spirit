@@ -1,5 +1,5 @@
-from .. import inner_encoders
 from .. import encoder
+from .. import inner_encoders
 
 
 def encode_item(item, item_mark=None, **kwargs):

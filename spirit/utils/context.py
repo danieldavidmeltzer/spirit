@@ -1,6 +1,3 @@
-import os
-
-
 class Context:
     def __init__(self):
         self.publish = None
@@ -10,4 +7,3 @@ class Context:
         context = cls()
         context.publish = publish
         return context
-

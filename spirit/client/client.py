@@ -1,10 +1,10 @@
+import requests
 from purl import URL
 
-import requests
+from spirit.reader import reader
 from spirit.representations_client.representation_snapshot_packet \
     import RepresentationSnapshotPacket
 from spirit.representations_encoding.helper_encoders import client_encoder
-from spirit.reader import reader
 from spirit.utils.exception_utils import retry_on_exception
 
 

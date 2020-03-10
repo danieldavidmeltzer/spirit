@@ -1,10 +1,11 @@
 from flask import Flask
-from flask import make_response
 from flask import jsonify
-from spirit.blob_store.secret_keys import get_minio_keys_from_environment
-from . import database_drivers
-from spirit.utils.fetcher import find_driver
+from flask import make_response
+
 from spirit.blob_store.blob_store import BlobStore
+from spirit.blob_store.secret_keys import get_minio_keys_from_environment
+from spirit.utils.fetcher import find_driver
+from . import database_drivers
 
 app = Flask(__name__)
 

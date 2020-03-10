@@ -9,5 +9,3 @@ def save_result(result, saver, mongo_db):
 
 
 save_result.field = "RepresentationResult"
-
-

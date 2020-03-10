@@ -15,6 +15,3 @@ class SnapshotPacketEncoder:
         encoder(self.snapshot_packet.user,
                 encoded_user=encoded_snapshot_packet.user)
         return encoded_snapshot_packet
-
-
-

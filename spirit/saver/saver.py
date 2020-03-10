@@ -1,10 +1,11 @@
 from purl import URL
-from spirit.utils.list_utils import get_single_item
-from spirit.utils import fetcher
-from . import drivers
-from spirit.saver_protobuf.saver_proto_pb2 import ParsingResult
+
 from spirit.representation_construction.protobuf_construction.protobuf_parsers \
     import saver_protobuf_parser
+from spirit.saver_protobuf.saver_proto_pb2 import ParsingResult
+from spirit.utils import fetcher
+from spirit.utils.list_utils import get_single_item
+from . import drivers
 
 
 class Saver:

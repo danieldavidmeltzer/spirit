@@ -13,5 +13,6 @@ def get_single_item(a_list):
         raise Ambiguous("Ambiguous representations")
     return None
 
+
 def lower_list(a_list):
     return [item.lower() for item in a_list]

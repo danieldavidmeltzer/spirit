@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+
 from spirit.utils.list_utils import get_single_item
 
 

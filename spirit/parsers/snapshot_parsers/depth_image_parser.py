@@ -1,7 +1,9 @@
 import io
+
 import matplotlib.pyplot as plotter
-from spirit.blob_store.blob_store import BlobStore
 import numpy
+
+from spirit.blob_store.blob_store import BlobStore
 
 
 def parse_depth_image(snapshot, context):

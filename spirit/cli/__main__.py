@@ -1,10 +1,12 @@
 import logging
+import shutil
 import sys
 from io import BytesIO
-from PIL import Image
+
 import click
-import shutil
 import requests
+from PIL import Image
+
 from .ascii_art import print_ascii_art
 
 

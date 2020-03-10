@@ -12,6 +12,7 @@ def create_publisher(queue_url):
         channel.exchange_declare(exchange='parsing', exchange_type='fanout')
         channel.basic_publish(exchange='parsing', routing_key='', body=message)
         connection.close()
+
     return publisher
 
 
