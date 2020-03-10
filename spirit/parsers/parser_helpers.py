@@ -66,7 +66,10 @@ def run_mq_parser(parser_field, mq_url, blob_url=None):
     channel.start_consuming()
 
 
-def publish_parser_result(parser_field, mq_url, parser_result, snapshot_packet):
+def publish_parser_result(parser_field,
+                          mq_url,
+                          parser_result,
+                          snapshot_packet):
     user = snapshot_packet.user
     snapshot = snapshot_packet.snapshot
     parser_result = (parser_field, parser_result)

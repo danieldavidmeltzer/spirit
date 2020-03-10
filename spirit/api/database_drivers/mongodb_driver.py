@@ -74,7 +74,8 @@ class MongoDBDriver:
         snapshots = {}
         for snapshot in snapshot_results:
             snapshot_id = snapshot['snapshot_id']
-            snapshot_date = snapshot['date_time'].strftime("%d/%m/%Y, %H:%M:%S")
+            snapshot_date =\
+                snapshot['date_time'].strftime("%d/%m/%Y, %H:%M:%S")
             snapshots[snapshot_id] = {'date_time': snapshot_date}
         return snapshots
 

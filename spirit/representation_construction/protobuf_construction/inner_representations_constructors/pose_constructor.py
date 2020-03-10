@@ -1,4 +1,5 @@
-from spirit.representations_server.representation_pose import RepresentationPose
+from spirit.representations_server.representation_pose import \
+    RepresentationPose
 
 
 def construct_pose(protobuf_item, _):

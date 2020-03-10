@@ -1,6 +1,7 @@
 import datetime
 
-from spirit.representations_client.representation_user import RepresentationUser
+from spirit.representations_client.representation_user import \
+    RepresentationUser
 
 
 def construct_user(protobuf_user, _):

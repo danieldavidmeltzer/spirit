@@ -68,4 +68,5 @@ def get_data(user_id, snapshot_id, result_name):
             'Content-Disposition', 'attachment', filename='data.jpg')
         return response
     else:
-        return {'error': f"Not supported 'data' field for result:{result_name}"}
+        return \
+            {'error': f"Not supported 'data' field for result:{result_name}"}

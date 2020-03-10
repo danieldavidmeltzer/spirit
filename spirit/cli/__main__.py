@@ -67,7 +67,8 @@ def get_snapshots(user_id, host, port):
 @click.option('-h', '--host', default='localhost', show_default=True)
 @click.option('-p', '--port', type=int, default=5000, show_default=True)
 def get_snapshots(snapshot_id, user_id, host, port):
-    addr = get_address(host, port) + f"/users/{user_id}/snapshots/{snapshot_id}"
+    addr = get_address(host, port)\
+           + f"/users/{user_id}/snapshots/{snapshot_id}"
     response = requests.get(addr)
     result = response.json()
     results = result['results']
