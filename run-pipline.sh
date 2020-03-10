@@ -1,4 +1,8 @@
 #!/bin/bash
+
+echo "we are building a seperate image for each docker, as the code should,
+theoraticlly be independet, please be patient as it could take some time"
+
 # create random keys if needed or use provided ones
 MINIO_ACCESS_KEY=${1:-$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | head -c 10)}
 MINIO_SECRET_KEY=${2:-$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | head -c 32)}
