@@ -89,15 +89,16 @@ and create results.
 
 ## Adding a parser
 
-in order to add a parser all you need is to add a parser under 
-`parsers` package. 
-you can either write a class which receives the item, context
+- In order to add a parser all you need is to add a parser under 
+`parsers` package. <br>it would be collected automatically from there .<br><br>
+- you can either write a class which receives the item, context
  in the init, and the
 other elements in the parse part , or you can write a function 
-like the pose parser.
-you of course will need to add an encoder for the new result but the saver
+like the pose parser.<br><br>
+- you of course will need to add an encoder for the new result but the saver
 should be able to pick it up with no change, make sure to change the cli+gui 
 accordingly.
+<br><br>
 
 
 ## run_pipline.sh 
