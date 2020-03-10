@@ -4,7 +4,6 @@ from flask import jsonify
 from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from . import database_drivers
 from spirit.utils.fetcher import find_driver
-from minio import Minio
 from spirit.blob_store.blob_store import BlobStore
 
 app = Flask(__name__)

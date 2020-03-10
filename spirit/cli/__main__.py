@@ -87,7 +87,6 @@ def get_snapshots(snapshot_id, user_id, host, port):
 def get_result(snapshot_id, user_id, result, host, port, save, art):
     addr = get_address(host, port) + f"/users/{user_id}/snapshots/" \
                                      f"{snapshot_id}/{result}"
-    print(addr)
     response = requests.get(addr)
     json_result = response.json()
     handle_result = None
