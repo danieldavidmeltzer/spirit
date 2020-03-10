@@ -66,7 +66,7 @@ def get_snapshots(user_id, host, port):
 @click.argument("snapshot_id")
 @click.option('-h', '--host', default='localhost', show_default=True)
 @click.option('-p', '--port', type=int, default=5000, show_default=True)
-def get_snapshots(snapshot_id, user_id, host, port):
+def get_snapshot(snapshot_id, user_id, host, port):
     addr = get_address(host, port)\
            + f"/users/{user_id}/snapshots/{snapshot_id}"
     response = requests.get(addr)
