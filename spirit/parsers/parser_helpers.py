@@ -6,7 +6,7 @@ from purl import URL
 from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from spirit.inner_protobuf.inner_protocol_pb2 import \
     SnapshotPacketInner
-from spirit.representation_construction.\
+from spirit.representation_construction. \
     protobuf_construction.protobuf_parsers \
     import inner_protobuf_parser
 from spirit.representations_encoding.helper_encoders import saver_encoder

@@ -6,7 +6,7 @@ from flask import request
 from spirit.blob_store.secret_keys import get_minio_keys_from_environment
 from spirit.communication_protobuf.connection_protocol_pb2 import \
     SnapshotPacketCommunicated
-from spirit.representation_construction.\
+from spirit.representation_construction. \
     protobuf_construction.protobuf_parsers \
     .communication_protobuf_parser import parse_communication_protobuf
 from spirit.representations_encoding.helper_encoders import inner_encoder

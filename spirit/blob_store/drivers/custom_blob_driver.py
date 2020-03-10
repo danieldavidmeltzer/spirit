@@ -4,7 +4,9 @@ from uuid import uuid4
 from minio import Minio
 from purl import URL
 
-from ..keys import *
+from ..keys import BUCKET_NAME_KEY
+from ..keys import MINIO_ACCESS_KEY
+from ..keys import MINIO_SECRET_KEY
 
 
 class CustomBlobDriver:

@@ -30,7 +30,8 @@ def construct_field(field_protobuf, parse_item):
         for further parsing
 
     Returns:
-        -RepresentationFieldSimple for field with int, double, string FieldValue
+        -RepresentationFieldSimple for field with int, double,
+        string FieldValue
         -RepresentationFieldComposite for field with sub_fields FieldValue
 
     """

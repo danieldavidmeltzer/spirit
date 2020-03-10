@@ -30,7 +30,8 @@ class Client:
 
 def upload_snapshot_packet(snapshot_packet, server_url):
     snapshot_packet_in_protobuf = client_encoder.encode_item(snapshot_packet)
-    serialized_snapshot_packet = snapshot_packet_in_protobuf.SerializeToString()
+    serialized_snapshot_packet = \
+        snapshot_packet_in_protobuf.SerializeToString()
     response = requests.post(server_url + "/upload_snapshot",
                              data=serialized_snapshot_packet)
     return response.text

@@ -1,6 +1,9 @@
 import os
 
-from .keys import *
+from .keys import ENV_MINIO_ACCESS_KEY
+from .keys import ENV_MINIO_SECRET_KEY
+from .keys import MINIO_ACCESS_KEY
+from .keys import MINIO_SECRET_KEY
 
 
 def get_minio_keys_from_environment():
