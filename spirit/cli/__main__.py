@@ -56,9 +56,9 @@ def get_snapshots(user_id, host, port):
     result = response.json()
     for snapshot in result:
         snapshot_obj = result[snapshot]
-        for snap_id in snapshot_obj:
-            print(f"snapshot {snap_id} from "
-                  f"{snapshot_obj[snap_id]['date_time']}")
+
+        print(f"snapshot {snapshot} from "
+              f"{snapshot_obj['date_time']}")
 
 
 @main.command(name='get-snapshot')
@@ -144,7 +144,7 @@ def handle_feelings(json_result):
 def handle_pose(json_result):
     print_result = ""
     print_result += "pose:\n"
-    print_result += "\ntranslation:"
+    print_result += "translation:\n"
     for v in json_result['translation']:
         print_result += f"{v}:{json_result['translation'][v]}\n"
     print_result += "rotation\n"
