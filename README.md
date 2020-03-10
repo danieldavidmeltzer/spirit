@@ -27,7 +27,7 @@ Spirit Project For Advanced System Design.
     $ ./scripts/install.sh
     ...
     $ source .env/bin/activate
-    [spirit] $ # you're good to go!
+    [spirit] $
     ```
 
 3. To check that everything is working as expected, run the tests:
@@ -35,11 +35,54 @@ Spirit Project For Advanced System Design.
     $ pytest tests/
     ```
 
+## Running
 
+```shell script
+run_pipline.sh
+```
+this should start all the dockers and install everything
+after that you can just use spirit.client and it should work fine.
+
+it could take some time to run. 
+#Basic
 ## Usage
 
    The `spirit` package provides a command-line interface,use flag --help to start:
    ```shell script
-    $ python -m spirit --help
+    $ python -m spirit.client --help
    ```
+
+# Advanced
+
+## parsing(generally not snapshots) utility
+
+generally parsing means a way to handle item when there are
+few 'parsers' to handle it. we use this for 3 main things in the project:
+1. encoders - encode representation into protobuf 
+which you can then convert to bytes and send.
+2. constructors - given a protobuf item we want to create a representation for
+us to work with
+3. parsers - in the meaning of parsing a result which parse results.
+
+
+
+## Adding a parser
+
+in order to add a parser all you need is to add a parser under 
+`parsers` package. 
+you can either write a class which receives the item, context
+ in the init, and the
+other elements in the parse part , or you can write a function 
+like the pose parser.
+you of course will need to add an encoder for the new result but the saver
+should be able to pick it up with no change, make sure to change the cli+gui 
+accordingly.
+
+### Known issues
+
+- the website has a problematic pagination which if stays on the snapshots of 
+the users for too long can download all he's images unrequiredly.
+- no way to auto create parser
+- lack of tests, due to time limitations
+- bad web design, again time limitations
 
