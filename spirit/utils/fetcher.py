@@ -29,7 +29,8 @@ def get_all_funcs(module):
 def find_driver(url,
                 drivers,
                 filter_scheme_field="scheme",
-                special_filter=lambda x: True):
+                special_filter=lambda x: True
+                ,**kwargs):
     """
     find driver given url
     Args:
@@ -66,4 +67,4 @@ def find_driver(url,
     url_drivers = list(filter(driver_filter, all_drivers))
     url_drivers = list(filter(special_filter, url_drivers))
     driver_cls = get_single_item(url_drivers)
-    return driver_cls(url)
+    return driver_cls(url, **kwargs)

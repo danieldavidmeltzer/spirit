@@ -54,6 +54,7 @@ def get_user(user_id):
         snap = {'snapshot_id': snapshot,
                 'date_time': snapshots[snapshot]['date_time']}
         snapshots_final.append(snap)
+    host = '127.0.0.1' if host == "host.docker.internal" else host
     return render_template('user_page.html',
                            snapshot_f=snapshots_final[:1][0],
                            snapshots=snapshots_final[1:],
@@ -75,7 +76,8 @@ def get_snapshot(user_id, snapshot_id):
     response_feelings = requests.get(addr_feelings)
     feelings_result = response_feelings.json()
     for feeling in feelings_result:
-        feelings_result[feeling] = int(100 * feelings_result[feeling])
+        feelings_result[feeling] = int(90 * feelings_result[feeling])
+    host = '127.0.0.1' if host == "host.docker.internal" else host
     return render_template('snapshot_data.html',
                            feelings=feelings_result,
                            translation=pose_result['translation'],

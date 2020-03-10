@@ -38,13 +38,13 @@ Spirit Project For Advanced System Design.
 ## Running
 
 ```shell script
-run_pipline.sh
+./run_pipline.sh
 ```
 this should start all the dockers and install everything
 after that you can just use spirit.client and it should work fine.
 
 it could take some time to run. 
-#Basic
+#Basics
 ## Usage
 
    The `spirit` package provides a command-line interface,use flag --help to start:
@@ -54,7 +54,7 @@ it could take some time to run.
 
 # Advanced
 
-## parsing(generally not snapshots) utility
+## Parsing (generally, not snapshots) utility
 
 generally parsing means a way to handle item when there are
 few 'parsers' to handle it. we use this for 3 main things in the project:
@@ -62,7 +62,8 @@ few 'parsers' to handle it. we use this for 3 main things in the project:
 which you can then convert to bytes and send.
 2. constructors - given a protobuf item we want to create a representation for
 us to work with
-3. parsers - in the meaning of parsing a result which parse results.
+3. parsers - in the meaning of parsing a result which parse snapshots 
+and create results.
 
 
 
@@ -85,4 +86,5 @@ the users for too long can download all he's images unrequiredly.
 - no way to auto create parser
 - lack of tests, due to time limitations
 - bad web design, again time limitations
+
 
