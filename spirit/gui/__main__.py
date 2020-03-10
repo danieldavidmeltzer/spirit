@@ -20,7 +20,8 @@ def main():
 @click.option('-P', '--api_port',
               default=5000,
               show_default=True)
-def run_server(host, port, api_host, api_port):
+@click.option("-I", "image_api_address", default="127.0.0.1:5000")
+def run_server(host, port, api_host, api_port, image_api_address):
     """
     run gui server
     Args:
@@ -28,9 +29,10 @@ def run_server(host, port, api_host, api_port):
         api_host: host of the api server
         api_port: port of the api server
         port: port of gui
+        image_api_address: html way to fetch images
 
     """
-    GUIServer(host, port, api_host, api_port).run()
+    GUIServer(host, port, api_host, api_port, image_api_address).run()
 
 
 if __name__ == '__main__':

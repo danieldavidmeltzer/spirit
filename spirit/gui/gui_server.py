@@ -7,11 +7,12 @@ app = Flask(__name__, template_folder="../../website/",
 
 
 class GUIServer:
-    def __init__(self, host, port, api_host, api_port):
+    def __init__(self, host, port, api_host, api_port, image_api_uri):
         self.host = host
         self.port = port
         app.config['api_host'] = api_host
         app.config['api_port'] = api_port
+        app.config['image_api_uri'] = image_api_uri
 
     def run(self):
         app.run(host=self.host, port=self.port)
@@ -46,6 +47,7 @@ def get_user_data(host, port, user_id):
 def get_user(user_id):
     host = app.config['api_host']
     port = app.config['api_port']
+    image_api_uri = app.config['image_api_uri']
     addr = get_address(host, port) + f"/users/{user_id}/snapshots"
     response = requests.get(addr)
     snapshots = response.json()
@@ -54,19 +56,18 @@ def get_user(user_id):
         snap = {'snapshot_id': snapshot,
                 'date_time': snapshots[snapshot]['date_time']}
         snapshots_final.append(snap)
-    host = '127.0.0.1' if host == "host.docker.internal" else host
     return render_template('user_page.html',
                            snapshot_f=snapshots_final[:1][0],
                            snapshots=snapshots_final[1:],
                            user_id=user_id,
-                           host=host,
-                           port=port)
+                           image_api_uri=image_api_uri)
 
 
 @app.route('/users/<int:user_id>/snapshots/<snapshot_id>')
 def get_snapshot(user_id, snapshot_id):
     host = app.config['api_host']
     port = app.config['api_port']
+    image_api_uri = app.config['image_api_uri']
     addr_pose = get_address(host, port) + f"/users/{user_id}/snapshots/" \
                                           f"{snapshot_id}/pose"
     response_pose = requests.get(addr_pose)
@@ -77,12 +78,10 @@ def get_snapshot(user_id, snapshot_id):
     feelings_result = response_feelings.json()
     for feeling in feelings_result:
         feelings_result[feeling] = int(90 * feelings_result[feeling])
-    host = '127.0.0.1' if host == "host.docker.internal" else host
     return render_template('snapshot_data.html',
                            feelings=feelings_result,
                            translation=pose_result['translation'],
                            rotation=pose_result['rotation'],
                            snapshot_id=snapshot_id,
                            user_id=user_id,
-                           host=host,
-                           port=port)
+                           image_api_uri=image_api_uri)

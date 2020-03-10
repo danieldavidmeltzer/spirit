@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "we are building a seperate image for each docker, as the code should,
-theoraticlly be independet, please be patient as it could take some time"
+echo "this script could take some time, it might need to download few stuff, make sure you have internet connectivity"
+
 
 # create random keys if needed or use provided ones
 MINIO_ACCESS_KEY=${1:-$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | head -c 10)}
@@ -37,6 +37,8 @@ python ./block_until_rabbitmq_ready.py
 echo "running mongodb"
 docker run -d -p 27017:27017 --network=my-net  mongo
 
+
+docker build -f dockers/main_code/Dockerfile . -t main_code
 
 #create server image
 docker build -f dockers/server/Dockerfile . -t server

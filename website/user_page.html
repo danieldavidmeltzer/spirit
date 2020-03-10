@@ -17,7 +17,7 @@
     var delayInMilliseconds = 300; //0.3 second stupid pagination here
 {% for snapshot in snapshots %}
 setTimeout(function() {
- $('#{{snapshot.snapshot_id}}').attr('src', "http://{{ host }}:{{ port }}/users/{{ user_id }}/snapshots/{{ snapshot.snapshot_id }}/color_image/data")
+ $('#{{snapshot.snapshot_id}}').attr('src', "http://{{  image_api_uri  }}/users/{{ user_id }}/snapshots/{{ snapshot.snapshot_id }}/color_image/data")
 }, delayInMilliseconds*{{loop.index}} );
 {% endfor %}
     </script>
@@ -29,7 +29,7 @@ setTimeout(function() {
   <div class="carousel-inner">
        <div class="carousel-item active">
             <a href= "/users/{{ user_id }}/snapshots/{{ snapshot_f.snapshot_id }}">
-      <img id="{{snapshot_f.snapshot_id}}" class="d-block w-100" src="http://{{ host }}:{{ port }}/users/{{ user_id }}/snapshots/{{snapshot_f.snapshot_id}}/color_image/data" >
+      <img id="{{snapshot_f.snapshot_id}}" onerror="this.onerror=null; this.src='{{url_for('static', filename='def.jpg')}}'" class="d-block w-100" src="http://{{  image_api_uri  }}/users/{{ user_id }}/snapshots/{{snapshot_f.snapshot_id}}/color_image/data" >
             </a>
                 <div class="carousel-caption d-none d-md-block">
                     <div style="background-color:black">
@@ -43,7 +43,7 @@ setTimeout(function() {
 
     <div class="carousel-item ">
         <a href= "/users/{{ user_id }}/snapshots/{{ snapshot.snapshot_id }}">
-      <img id="{{ snapshot.snapshot_id }}" class="d-block w-100" src="{{url_for('static', filename='def.jpg')}}" >
+      <img id="{{ snapshot.snapshot_id }}" onerror="this.onerror=null; this.src='{{url_for('static', filename='def.jpg')}}'" class="d-block w-100" src="{{url_for('static', filename='def.jpg')}}" >
         </a>
       <div class="carousel-caption d-none d-md-block">
           <div style="background-color:black">

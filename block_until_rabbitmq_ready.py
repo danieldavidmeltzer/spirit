@@ -16,7 +16,8 @@ def main():
         sleep(0.1)  # sleep for 100 ms
     end = time.time()
     execution_time = end - start
-    print(f"blocking took {execution_time:.3f} seconds.")
+    print(f"rabbitmq completed setup"
+          f".took {execution_time:.3f} seconds(estimated).")
 
 
 if __name__ == '__main__':
