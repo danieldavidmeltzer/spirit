@@ -78,3 +78,9 @@ docker run --network=my-net  \
   -e "MINIO_ACCESS_KEY=$MINIO_ACCESS_KEY" \
   -e "MINIO_SECRET_KEY=$MINIO_SECRET_KEY" \
   -d  --name api api
+
+echo "run gui"
+docker build -f dockers/gui/Dockerfile . -t gui
+docker run --network=my-net  \
+  -p 8080:8080 \
+  -d  --name gui gui
