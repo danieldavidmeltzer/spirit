@@ -18,14 +18,6 @@ def save_item(repr_item, item_mark=None, **kwargs):
         return func(item, save_item, **encode_kwargs)
 
     parsing_configurations = ParsingConfigurations.basic_configuration()
-    # TODO: if not used delete item_mark check if one of savers use it
-    # if item_mark is not None:
-    #     def comparator(_, compared_item_mark, candidate, encode_attr):
-    #         field = getattr(candidate, encode_attr)
-    #         return field.lower() == compared_item_mark.lower()
-    #
-    #     parsing_configurations.item_mark = item_mark
-    #     parsing_configurations.parser_comparator = comparator
 
     return general_parse.parse_item(repr_item,
                                     savers,

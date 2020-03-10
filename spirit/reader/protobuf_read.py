@@ -13,7 +13,6 @@ def _read_formatted(file_interactor, n_bytes, struct_format):
     read_bytes = file_interactor.read(n_bytes)
     if len(read_bytes) == 0:
         return None
-    # TODO: explain supress
     with suppress(IndexError):
         result = struct.unpack(struct_format, read_bytes)[0]
     return result

@@ -20,7 +20,6 @@ def parse_using_parsers(item,
                    for item
                    in potential_parsers
                    if hasattr(item, parse_attr_name)]
-    # TODO: check if hasattr needed if we have parser_comparator
     parsers_for_item = [candidate for candidate in all_parsers
                         if parser_comparator(item,
                                              item_mark,
@@ -43,7 +42,6 @@ def parse_item(item,
                cls_parse_method,
                func_parse_method,
                parsing_configurations=
-               # TODO: change this to None and inside method, handle None
                ParsingConfigurations.basic_configuration(),
                **kwargs):
     """

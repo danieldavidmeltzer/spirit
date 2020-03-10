@@ -1,5 +1,4 @@
-def encode_pose(pose, _, **kwargs):
-    snapshot = kwargs["snapshot"]  # Todo: move kwargs to var
+def encode_pose(pose, _, snapshot):
     snapshot.pose.translation.x = pose.translation[0]
     snapshot.pose.translation.y = pose.translation[1]
     snapshot.pose.translation.z = pose.translation[2]
