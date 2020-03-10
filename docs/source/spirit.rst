@@ -6,43 +6,25 @@ Subpackages
 
 .. toctree::
 
+   spirit.api
+   spirit.blob_store
+   spirit.cli
+   spirit.client
+   spirit.communication_protobuf
+   spirit.gui
+   spirit.inner_protobuf
+   spirit.parsers
+   spirit.reader
+   spirit.representation_construction
+   spirit.representations_client
+   spirit.representations_encoding
+   spirit.representations_saver
+   spirit.representations_server
+   spirit.sample_protobuf
+   spirit.saver
+   spirit.saver_protobuf
+   spirit.server
    spirit.utils
-
-Submodules
-----------
-
-spirit.client module
---------------------
-
-.. automodule:: spirit.client
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-spirit.server module
---------------------
-
-.. automodule:: spirit.server
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-spirit.thought module
----------------------
-
-.. automodule:: spirit.thought
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-spirit.web module
------------------
-
-.. automodule:: spirit.web
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------
