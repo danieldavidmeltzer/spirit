@@ -1,4 +1,4 @@
-Pillow==7.0.0
+Pillow==8.1.1
 numpy==1.18.0
 alabaster==0.7.12
 attrs==19.2.0
