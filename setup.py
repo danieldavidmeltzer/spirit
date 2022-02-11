@@ -24,7 +24,7 @@ setup(
                       'sphinxcontrib-qthelp==1.0.2',
                       'sphinxcontrib-serializinghtml==1.1.3',
                       'urllib3==1.25.7', 'wcwidth==0.1.7', 'Werkzeug==0.16.0',
-                      'protobuf==3.11.2', 'matplotlib==3.1.2', 'purl==1.5',
+                      'protobuf==3.15.0', 'matplotlib==3.1.2', 'purl==1.5',
                       'pika==1.1.0', 'minio==5.0.7', 'pymongo==3.10.1'],
     tests_require=['Pillow==7.0.0', 'numpy==1.18.0', 'alabaster==0.7.12',
                    'attrs==19.2.0', 'Babel==2.7.0', 'certifi==2019.9.11',
@@ -43,7 +43,7 @@ setup(
                    'sphinxcontrib-jsmath==1.0.1',
                    'sphinxcontrib-qthelp==1.0.2',
                    'sphinxcontrib-serializinghtml==1.1.3', 'urllib3==1.25.7',
-                   'wcwidth==0.1.7', 'Werkzeug==0.16.0', 'protobuf==3.11.2',
+                   'wcwidth==0.1.7', 'Werkzeug==0.16.0', 'protobuf==3.15.0',
                    'matplotlib==3.1.2', 'purl==1.5', 'pika==1.1.0',
                    'minio==5.0.7', 'pymongo==3.10.1'],
 )
